@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Флюгер</title>
+</head>
+<body class='bg-[#FBF8EC]'>
+	<!-- Header -->
+	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
+		<nav class='container flex justify-between items-center py-2 tracking-widest md:hidden'>
+			<div>
+				<a href="#"><img class='lg:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
+				<a href="#"><img class='hidden lg:block' src="/assets/images/logo.svg" alt=""></a>
+			</div>
+			<div class='flex items-center gap-4'>
+			<div class='relative inline-block bg-buttonColor text-white px-5 py-3 rounded-md'>
+				<div class='flex items-center gap-4'>
+					<img src="/assets/images/menu/bars.svg" alt="">
+					<button>Каталог</button>
+					<!-- <div class='hidden absolute bg-black w-[1000px] top-[65px] z-10 hover:block'>
+						<ul>
+							<li><a href='#'>1</a></li>
+							<li><a href='#'>1</a></li>
+							<li><a href='#'>1</a></li>
+							<li><a href='#'>1</a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+			<form>
+				<div class='relative'>
+					<input class="pl-4 pr-[185px] py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-[130px] focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Найти товар' required>
+					<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+				</div>
+			</form>
+			</div>
+			<div class='flex items-center gap-8 text-white lg:gap-4'>
+				<ul>
+					<li class='grid place-items-center gap-y-[7px]'><img class='w-[24px] h-[24px]' src="/assets/images/menu/favorites.svg" alt="">Избранное</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-[7px]'><img src="/assets/images/menu/box.svg" alt="">Заказы</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-[7px]'><img src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div class='flex items-center gap-3'>
+				<img class='w-[50px]' src="/assets/images/menu/avatar.svg" alt="Изображение пользователя">
+				<div class='flex items-center gap-5 text-white lg:hidden'>
+					<span>Александр</span>
+					<img src="/assets/images/menu/search-tool.svg" alt="">
+				</div>
+			</div>
+		</nav>
+		<nav class='hidden md:flex container items-center fixed bottom-0 bg-white gap-20 justify-center py-3'>
+			<div class='grid place-items-center gap-y-[7px]'>
+				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
+				<a class='text-mainColorRed'>Каталог</a>
+			</div>
+			<div>
+				<ul class='flex items-center gap-24'>
+					<li class='grid place-items-center gap-y-[7px]'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</li>
+					<li class='grid place-items-center gap-y-[7px]'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</li>
+					<li class='grid place-items-center gap-y-[7px]'><img class='w-[28px] h-[28px]' src="/assets/images/menu/Blackshopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div>
+				<img class='w-[55px]' src="/assets/images/menu/avatar.svg" alt="">
+			</div>
+		</nav>
+	</header>
+	<!-- Main section -->
+	<main>
+		<section id='main'>
+			<div class='container'>
+				<h1 class='font-semibold text-[#414141] text-[38px] mt-[120px] mb-[35px]'>Каталог</h1>
+				<div class='grid grid-cols-4 grid-flow-row gap-8'>
+					<div class='col-span-2 b relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/milk.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Молоко, сыр, яйцо</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/bread.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Хлеб</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/greens.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Фрукты и овощи</a>
+					</div>
+					<!--  -->
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/freezedProducts.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Замороженные продукты</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/dinks.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Напитки</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/candys.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Кондитерские изделия</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/hotDrinks.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Чай, кофе</a>
+					</div>
+					<!--  -->
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/grocery.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Бакалея</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/healthyFood.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Здоровое питание</a>
+					</div>
+					<div class='col-span-2 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/petSupp.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Зоотовары</a>
+					</div>
+					<!--  -->
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/default.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Детское питание</a>
+					</div>
+					<div class='col-span-2 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/meat.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Мясо, птица, колбаса</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] rounded-md mix-blend-multiply' src="/assets/images/cards/default.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Непродовольственные продукты</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class='bg-[#E5C3C5] mt-40'>
+		<div class='container flex items-center gap-32 py-6'>
+			<div>
+				<img src="/assets/images/footerLogo.svg" alt="">
+			</div>
+			<div class='flex gap-3'>
+				<img class='w-8 items-center' src="/assets/images/footer/phoneLogo.svg" alt="">
+				<ul class='font-[600]'>
+					<li>Новочеркасск (8635) 22-41-10</li>
+					<li>Ростов-на-Дону (863) 279-80-41</li>
+				</ul>
+			</div>
+			<div class=''>
+				<p class=''>support@ifluger.ru</p>
+				<div class='flex gap-4'>
+					<img src="/assets/images/footer/telegram.svg" alt="">
+					<img src="/assets/images/footer/whatsapp.svg" alt="">
+					<img src="/assets/images/footer/vk.svg" alt="">
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src='/js/common.js'></script>
+</body>
+</html>

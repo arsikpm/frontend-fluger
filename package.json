@@ -1,0 +1,13 @@
+{
+  "name": "fluger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx tailwindcss -i ./input.css -o ./css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {}
+}
