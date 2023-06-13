@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Флюгер | Заказы</title>
+</head>
+<body class='bg-[#FBF8EC]'>
+	<!-- Header -->
+	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
+		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex'>
+			<div>
+				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
+				<a href="index.html"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
+			</div>
+			<div class='flex items-center gap-4'>
+				<!--  --> 
+				<div class='relative inline-block sm:hidden'>
+					<button class='bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] focus:bg-[#1f7b71]' onclick='onClickButton()'>Каталог</button>
+					<!-- <div class='hidden absolute bg-black w-[350px] z-10 top-36' id='dropdown'>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+					</div> -->
+				</div> 
+			<!--  -->
+			<form>
+				<div class='relative'>
+					<input class="pl-4 pr-[185px] py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-32 sm:w-80 md:pr-16 focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Найти товар' required>
+					<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+				</div>
+			</form>
+			</div>
+			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden'>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img class='w-[24px] h-[24px]' src="/assets/images/menu/favorites.svg" alt="">Избранное</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/box.svg" alt="">Заказы</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div class='flex items-center gap-3 sm:hidden'>
+				<img class='md:min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="Изображение пользователя">
+				<div class='flex items-center gap-5 text-white lg:hidden'>
+					<span>Александр</span>
+					<img src="/assets/images/menu/search-tool.svg" alt="">
+				</div>
+			</div>
+		</nav>
+		<nav class='hidden container items-center fixed bottom-0 bg-white gap-20 justify-center py-3 sm:gap-7'>
+			<div class='grid place-items-center gap-y-2'>
+				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
+				<a class='text-mainColorRed'>Каталог</a>
+			</div>
+			<div>
+				<ul class='flex items-center gap-24 sm:gap-8'>
+					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</li>
+					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</li>
+					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/Blackshopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div>
+				<img class='min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="">
+			</div>
+		</nav>
+	</header>
+	<!-- Main section -->
+	<main>
+		<section class='container'>
+			<div class='flex text-[#8F8F8F] mt-32 mb-3 items-center gap-3'>
+				<a href='index.html'>Главная</a href='index.html'>
+				<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
+				<a href='#'>Заказы</a>
+			</div>
+			<h1 class='text-[#414141] text-5xl font-semibold my-7'>Заказы</h1>
+			<!-- process -->
+			<div class='mb-24'>
+				<div>
+					<div class='flex items-center justify-between'>
+						<div>
+							<ul class='flex gap-x-6 items-center'>
+								<li class='font-semibold text-xl'>01.04.2021</li>
+								<li class='font-semibold text-xl'>11:00-14:00</li>
+								<li class='bg-[#F3F2F1] text-[#515151] py-2 px-6 rounded-md'>В процессе</li>
+							</ul>
+						</div>
+						<div class='flex gap-5 items-center'>
+							<span class='text-2xl text-[#414141]'>3 006,83 &#8381;</span>
+							<button class='flex gap-2 bg-[#C5000D] py-2 px-3 rounded-md text-white'><img src="/assets/images/products_cards/calendar.svg" alt="">Оформить доставку</button>
+						</div>
+					</div>
+					<!-- cards -->
+					<div class='grid grid-cols-4 my-8 gap-4'>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img1.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>77,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img2.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>159,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img3.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>599,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img4.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>49,39 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+					</div>
+					<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть заказ</button>
+				</div>
+			</div>
+			<!-- undelivered -->
+			<div class='mb-24'>
+				<div>
+					<div class='flex items-center justify-between'>
+						<div>
+							<ul class='flex gap-x-6 items-center'>
+								<li class='font-semibold text-xl'>01.04.2021</li>
+								<li class='font-semibold text-xl'>14:00-18:00</li>
+								<li class='bg-[#D80000] text-white py-2 px-6 rounded-md'>Не доставили</li>
+							</ul>
+						</div>
+						<div class='flex gap-5 items-center'>
+							<span class='text-2xl text-[#414141]'>1 006,00 &#8381;</span>
+							<button class='flex gap-2 bg-[#C5000D] py-2 px-12 rounded-md text-white'>Заказать</button>
+						</div>
+					</div>
+					<!-- cards -->
+					<div class='grid grid-cols-4 my-7 gap-4'>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img1.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>77,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img2.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>159,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img3.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>599,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img4.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>49,39 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- return -->
+			<div class='mb-24'>
+				<div>
+					<div class='flex items-center justify-between'>
+						<div>
+							<ul class='flex gap-x-6 items-center'>
+								<li class='font-semibold text-xl'>15.09.2020</li>
+								<li class='font-semibold text-xl'>18:00-20:00</li>
+								<li class='bg-[#D80000] text-white py-2 px-6 rounded-md'>Возврат</li>
+							</ul>
+						</div>
+						<div class='flex gap-5 items-center'>
+							<span class='text-2xl text-[#414141]'>1 321,20 &#8381;</span>
+							<button class='flex gap-2 bg-[#C5000D] py-2 px-12 rounded-md text-white'>Заказать</button>
+						</div>
+					</div>
+					<!-- cards -->
+					<div class='grid grid-cols-4 my-7 gap-4'>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img1.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>77,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img2.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>159,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img3.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>599,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img4.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>49,39 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- accepted -->
+			<div class='mb-24'>
+				<div>
+					<div class='flex items-center justify-between'>
+						<div>
+							<ul class='flex gap-x-6 items-center'>
+								<li class='font-semibold text-xl'>15.09.2020</li>
+								<li class='font-semibold text-xl'>14:00-18:00</li>
+								<li class='bg-[#70C05B] text-white py-2 px-6 rounded-md'>Получен</li>
+							</ul>
+						</div>
+						<div class='flex gap-5 items-center'>
+							<span class='text-2xl text-[#414141]'>1 321,20 &#8381;</span>
+							<button class='flex gap-2 bg-[#C5000D] py-2 px-12 rounded-md text-white'>Заказать</button>
+						</div>
+					</div>
+					<!-- cards -->
+					<div class='grid grid-cols-4 my-7 gap-4'>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img1.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>77,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img2.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>159,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img3.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>599,99 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+						<!-- card -->
+						<div class='bg-white py-5 px-3 rounded-md border'>
+							<div class='flex items-center justify-between'>
+								<div class='flex gap-1'>
+									<img src="/assets/images/products_cards/shopping-cart.svg" alt="">
+									<b class='text-xl'>1</b>
+								</div>
+								<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
+							</div>
+							<img src="/assets/images/orders/img4.jpg" alt="">
+							<h3 class='text-xl font-bold mt-2 mb-11'>49,39 <span>&#8381;</span></h3>
+							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+							<div class='flex my-4 gap-2'>
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+								<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
+							</div>
+							<button class='bg-transparent border-2 border-mainColorRed w-full text-lg text-mainColorRed py-2 rounded-md'>В корзину</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='text-center'>
+				<button class='bg-[#f0f0f0] text-[#606060] px-10 py-3 rounded-md text-lg m-auto'>Показать еще</button>
+			</div>
+			<div class='flex items-center gap-11 w-max my-8 m-auto'>
+				<button><img src="/assets/images/menu/double_arrow.svg" alt=""></button>
+				<button><img src="/assets/images/menu/arrow_mn.svg" alt=""></button>
+				<button class='text-[#B60220] font-semibold'>1</button>
+				<button class='text-[#606060]'>2</button>
+				<button class='text-[#606060]'>3</button>
+				<button class='text-[#606060]'>4</button>
+				<button class='text-[#606060]'>5</button>
+				<button class='text-[#606060]'>6</button>
+				<button class='text-[#606060]'>7</button>
+				<button class='text-[#606060]'>8</button>
+				<button class='rotate-180'><img src="/assets/images/menu/arrow_mn.svg" alt=""></button>
+				<button class='rotate-180'><img src="/assets/images/menu/double_arrow.svg" alt=""></button>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

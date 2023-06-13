@@ -12,8 +12,8 @@
 	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
 		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex'>
 			<div>
-				<a href="#"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
-				<a href="#"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
+				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
+				<a href="index.html"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
 			</div>
 			<div class='flex items-center gap-4'>
 				<!--  --> 
@@ -55,7 +55,7 @@
 			</div>
 		</nav>
 		<nav class='hidden container items-center fixed bottom-0 bg-white gap-20 justify-center py-3 sm:gap-7'>
-			<div class='grid place-items-center gap-y-[7px]'>
+			<div class='grid place-items-center gap-y-2'>
 				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
 				<a class='text-mainColorRed'>Каталог</a>
 			</div>
@@ -75,12 +75,12 @@
 	<main>
 		<section class='container'>
 			<div class='flex text-[#8F8F8F] mt-32 mb-3 items-center gap-3'>
-				<span>Каталог</span>
+				<a href='index.html'>Каталог</a>
 				<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
-				<span>Молоко, сыр, яйцо</span>
+				<a href='#'>Молоко, сыр, яйцо</a>
 			</div>
 			<div>
-				<h1 class='text-[#414141] text-[43px] font-semibold sm:max-w-xs'>Молоко, сыр, яйцо</h1>
+				<h1 class='text-[#414141] text-5xl font-semibold sm:max-w-xs'>Молоко, сыр, яйцо</h1>
 			</div>
 			<div class='flex justify-between gap-1 mt-8'>
 				<div class='text-[20px] sm:hidden'>
@@ -93,18 +93,18 @@
 					</ul>
 					<a href='#'>Сыр</a>
 					<ul class='text-[#414141] ml-4'>
-						<li class='py-2'>Твороженная масса</li>
-						<li class='py-2'>Маасдам</li>
-						<li class='py-2'>Колбасные сыры</li>
+						<a href='#'><li class='py-2'>Твороженная масса</li></a>
+						<a href='#'><li class='py-2'>Маасдам</li></a>
+						<a href='#'><li class='py-2'>Колбасные сыры</li></a>
 					</ul>
 					<a href='#'>Яйца</a>
 					<ul class='text-[#414141] ml-4'>
-						<li class='py-2'>Яйцо куриное</li>
-						<li class='py-2'>Яйцо перепелиное</li>
-						<li class='py-2'>Фермерские яйца</li>
+						<a href='#'><li class='py-2'>Яйцо куриное</li></a>
+						<a href='#'><li class='py-2'>Яйцо перепелиное</li></a>
+						<a href='#'><li class='py-2'>Фермерские яйца</li></a>
 					</ul>
 				</div>
-				<div class='text-center max-w-6xl'>
+				<div class='max-w-6xl'>
 					<!-- button -->
 					<div class='bg-mainColorRed w-max text-white py-3 px-16 rounded-md'>Фильтр</div>
 					<!-- cards -->
@@ -113,7 +113,7 @@
 						<div class='bg-white py-5 px-4 rounded-md border'>
 							<img class='bg-[#F3F2F1] p-2 rounded-md float-right' src="/assets/images/products_cards/like_icon.svg" alt="">
 							<img src="/assets/images/products_cards/image1.jpg" alt="">
-							<h3 class='text-xl font-bold mt-2 mb-[45px]'>139,99 <span>&#8381;</span></h3>
+							<h3 class='text-xl font-bold mt-2 mb-11'>139,99 <span>&#8381;</span></h3>
 							<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
 							<div class='flex my-4 gap-2'>
 								<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
@@ -209,7 +209,9 @@
 							<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md'>В корзину</button>
 						</div>
 					</div>
-					<button class='bg-[#f0f0f0] text-[#606060] px-10 py-3 rounded-md my-10 text-lg'>Показать еще</button>
+					<div class='text-center'>
+						<button class='bg-[#f0f0f0] text-[#606060] px-10 py-3 rounded-md my-10 text-lg'>Показать еще</button>
+					</div>
 					<div class='flex items-center gap-11 w-max mb-5 m-auto'>
 						<button><img src="/assets/images/menu/double_arrow.svg" alt=""></button>
 						<button><img src="/assets/images/menu/arrow_mn.svg" alt=""></button>

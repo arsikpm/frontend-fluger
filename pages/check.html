@@ -2,10 +2,9 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/style.css">
-	<title>Флюгер | Корзина</title>
+	<title>Флюгер | Доставка</title>
 </head>
 <body class='bg-[#FBF8EC]'>
 	<!-- Header -->
@@ -77,104 +76,51 @@
 			<div class='flex text-[#8F8F8F] mt-32 mb-3 items-center gap-3'>
 				<a href='index.html'>Каталог</a>
 				<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
-				<a href='#'>Корзина</a>
+				<a href='cart.html'>Корзина</a>
+				<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
+				<a href='#'>Доставка</a>
 			</div>
 			<div class='flex items-center gap-3'>
-				<h1 class='text-[#414141] text-5xl my-7 font-semibold sm:max-w-xs'>Корзина</h1>
+				<h1 class='text-[#414141] text-5xl my-7 font-semibold sm:max-w-xs'>Доставка</h1>
 				<div class='bg-mainColorRed w-max h-max text-white text-2xl py-1 px-3 rounded-md'>3</div>
 			</div>
-			<div class='flex items-center gap-3 mb-8'>
-				<button class='bg-mainColorRed p-4 rounded-md'>
-					<img src="/assets/images/cart/select.svg" alt="">
-				</button>
-				<button class='text-[#606060] mr-7'>Выбрать все</button>
-				<button class='text-mainColorRed'>Удалить выбранные</button>
-			</div>
 			<div class='flex justify-between'>
-				<!-- cards -->
-				<div class='grid gap-y-8'>
-				<!-- card -->
-				<div class='flex items-center bg-white p-3 rounded-md shadow-md'>
-					<div class='mr-24'>
-						<input class='w-8 h-8' type="checkbox">
-						<div class='flex'>
-						<img class='min-w-[82px] mr-2' src="/assets/images/cart/imgProduct.jpg" alt="">
-							<div class='grid gap-y-2'>
-								<h2 class='text-[#414141] text-2xl'>Горчица МАХЕЕВЪ Русская</h2>
-								<div class='flex gap-6'>
-									<b>44,50 <span>&#8381;</span></b>
-									<p class='text-[#606060]'>50,50 <span>&#8381;</span> за шт.</p>
-								</div>
+				<div>
+					<form action="">
+						<h2 class='text-[#414141] text-2xl font-semibold'>Получатель</h2>
+						<div class='flex gap-x-6 my-6'>
+							<div class='grid'>
+								<label class='text-[#665C5C]' for="name">Имя*</label>
+								<input class='border rounded-md w-80 h-12 px-4' type="text" id='name'>
+							</div>
+							<div class='grid'>
+								<label class='text-[#665C5C]' for="m-number">Телефон*</label>
+								<input class='border rounded-md w-80 h-12 px-4' type="tel" id='m-number'>
 							</div>
 						</div>
-						<div class='flex mt-4 items-center gap-8'>
-							<button class='border-2 border-mainColorRed rounded-md text-mainColorRed px-7 py-2'>Удалить</button>
-							<button class='border-2 border-transparent bg-mainColorRed rounded-md text-white px-7 py-2 hover:bg-white hover:border-mainColorRed hover:text-mainColorRed'>Добавить в избранное</button>
+						<h2 class='text-[#414141] text-2xl font-semibold'>Адрес доставки</h2>
+						<div class='my-6'>
+							<input class='border rounded-md min-w-full h-12 px-4' type="text" id='address'>
 						</div>
-					</div>
-					<div class='flex items-center gap-4 border-2 border-mainColorRed h-max py-1 px-4 rounded-md text-mainColorRed text-2xl mr-12' id='counter'>
-						<button id='buttonCountMinus'><img class='w-10' src="/assets/images/cart/minus.svg" alt=""></button>
-						<div class='text-2xl' id='buttonCountNumber'>2</div>
-						<button id='buttonCountPlus'><img class='w-10' src="/assets/images/cart/plus.svg" alt=""></button>
-					</div>
-					<div class='text-right'>
-						<p class='text-xl font-semibold'>80,10 <span>&#8381;</span></p>
-						<s class='text-[#8F8F8F]'>89,00 <span>&#8381;</span></s>
-					</div>
-				</div>
-				<!-- card -->
-				<div class='flex items-center bg-white p-3 rounded-md shadow-md'>
-					<div class='mr-24'>
-						<input class='w-8 h-8' type="checkbox">
-						<div class='flex'>
-						<img class='min-w-[82px] mr-2' src="/assets/images/cart/imgProduct.jpg" alt="">
-							<div class='grid gap-y-2'>
-								<h2 class='text-[#414141] text-2xl'>Горчица МАХЕЕВЪ Русская</h2>
-								<div class='flex gap-6'>
-									<b>44,50 <span>&#8381;</span></b>
-									<p class='text-[#606060]'>за шт.</p>
-								</div>
+						<h2 class='text-[#414141] text-2xl font-semibold'>Время доставки</h2>
+						<div class='flex gap-x-6 my-6'>
+							<div class='grid'>
+								<label class='text-[#665C5C]' for="date">Дата</label>
+								<input class='p-3 rounded-md' type="date" id='date'>
+							</div>
+							<div class='grid'>
+								<label class='text-[#665C5C]' for="time">Время</label>
+								<input class='p-3 rounded-md' type="time" id='time'>
 							</div>
 						</div>
-						<div class='flex mt-4 items-center gap-8'>
-							<button class='border-2 border-mainColorRed rounded-md text-mainColorRed px-7 py-2'>Удалить</button>
-							<button class='border-2 border-transparent bg-mainColorRed rounded-md text-white px-7 py-2 hover:bg-white hover:border-mainColorRed hover:text-mainColorRed'>Добавить в избранное</button>
-						</div>
-					</div>
-					<div class='flex items-center gap-4 border-2 border-mainColorRed h-max py-1 px-4 rounded-md text-mainColorRed text-2xl mr-12' id='counter'>
-						<button id='buttonCountMinus'><img class='w-10' src="/assets/images/cart/minus.svg" alt=""></button>
-						<div class='text-2xl' id='buttonCountNumber'>2</div>
-						<button id='buttonCountPlus'><img class='w-10' src="/assets/images/cart/plus.svg" alt=""></button>
-					</div>
-					<div class='text-right'>
-						<p class='text-xl font-semibold'>89,00 <span>&#8381;</span></p>
-					</div>
+						<h2 class='text-[#414141] text-2xl font-semibold'>Вид оплаты</h2>
+						<select class='p-4 bg-white rounded-md w-80 my-6'>
+							<option value="">Наличными при получении</option>
+							<option value="">2</option>
+						</select>
+					</form>
 				</div>
-				<!-- card -->
-				<div class='flex items-center bg-white p-3 rounded-md'>
-					<div class='mr-44'>
-						<input class='w-8 h-8 opacity-25' type="checkbox">
-						<div class='flex opacity-25'>
-						<img class='min-w-[82px] mr-2' src="/assets/images/cart/imgProduct.jpg" alt="">
-							<div class='grid gap-y-2'>
-								<h2 class='text-[#414141] text-2xl'>Горчица МАХЕЕВЪ Русская</h2>
-								<div class='flex gap-6'>
-									<b>44,50 <span>&#8381;</span></b>
-									<p class='text-[#606060]'>50,50 <span>&#8381;</span> за шт.</p>
-								</div>
-							</div>
-						</div>
-						<div class='flex mt-4 items-center gap-8'>
-							<button class='border-2 border-mainColorRed rounded-md text-mainColorRed px-7 py-2'>Удалить</button>
-							<button class='border-2 border-transparent bg-mainColorRed rounded-md text-white px-7 py-2 hover:bg-white hover:border-mainColorRed hover:text-mainColorRed'>Добавить в избранное</button>
-						</div>
-					</div>
-					<div>
-						<p class='text-xl text-[#414141]'>Нет в наличии</p>
-					</div>
-				</div>
-				</div>
-				<div class='w-72'>
+				<div class='w-80'>
 					<button class='bg-mainColorRed text-white py-3 px-8 rounded-md w-full text-xl'>Оформить заказ</button>
 					<div>
 						<div class='border-y-2 my-3 py-4 text-[#8F8F8F] text-lg'>
