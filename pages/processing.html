@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Флюгер | Обработка заказов</title>
+</head>
+<body class='bg-[#FBF8EC]'>
+	<!-- Header -->
+	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
+		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex'>
+			<div>
+				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
+				<a href="index.html"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
+			</div>
+			<div class='flex items-center gap-4'>
+				<!--  --> 
+				<div class='relative inline-block sm:hidden'>
+					<button class='bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] focus:bg-[#1f7b71]' onclick='onClickButton()'>Каталог</button>
+					<!-- <div class='hidden absolute bg-black w-[350px] z-10 top-36' id='dropdown'>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+					</div> -->
+				</div> 
+			<!--  -->
+			<form>
+				<div class='relative'>
+					<input class="pl-4 pr-[185px] py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-32 sm:w-80 md:pr-16 focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Найти товар' required>
+					<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+				</div>
+			</form>
+			</div>
+			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden'>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img class='w-[24px] h-[24px]' src="/assets/images/menu/favorites.svg" alt="">Избранное</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/box.svg" alt="">Заказы</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div class='flex items-center gap-3 sm:hidden'>
+				<img class='md:min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="Изображение пользователя">
+				<div class='flex items-center gap-5 text-white lg:hidden'>
+					<span>Александр</span>
+					<img src="/assets/images/menu/search-tool.svg" alt="">
+				</div>
+			</div>
+		</nav>
+		<nav class='hidden container items-center fixed bottom-0 bg-white gap-20 justify-center py-3 sm:gap-7'>
+			<div class='grid place-items-center gap-y-2'>
+				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
+				<a class='text-mainColorRed'>Каталог</a>
+			</div>
+			<div>
+				<ul class='flex items-center gap-24 sm:gap-8'>
+					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</li>
+					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</li>
+					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/Blackshopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div>
+				<img class='min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="">
+			</div>
+		</nav>
+	</header>
+	<!-- Main section -->
+	<main>
+		<section class='container'>
+			<div class='flex text-[#8F8F8F] mt-32 mb-3 items-center gap-3'>
+				<a href='index.html'>Главная</a href='index.html'>
+				<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
+				<a href='#'>Обработка заказов</a>
+			</div>
+			<div class='flex items-center gap-3'>
+				<h1 class='text-[#414141] text-5xl my-7 font-semibold sm:max-w-xs'>Обработка заказов</h1>
+				<div class='bg-mainColorRed w-max h-max text-white text-2xl py-1 px-3 rounded-md'>30</div>
+			</div>
+			<div class='flex items-center gap-3 mt-3'>
+				<button class='bg-[#F3F2F1] p-2 rounded-md'>
+					<img src="/assets/images/icons/calendar.svg" alt="">
+				</button>
+				<button class='bg-mainColorRed text-white py-3 px-5 rounded-md'>Сегодня<span class='bg-[#C5000D] p-2 rounded-md ml-5'>10</span></button>
+				<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>1 апреля<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>2</span></button>
+				<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>5 апреля<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>1</span></button>
+			</div>
+			<!-- items -->
+			<div class='grid gap-80'>
+				<!-- item -->
+				<div class=''>
+					<!-- 1 -->
+					<div class='flex justify-between items-center text-lg mb-5 mt-12'>
+						<div class='flex items-center gap-2'>
+							<img src="/assets/images/icons/clock.svg" alt="">
+							<b>11:00</b>
+						</div>
+						<div class='flex items-center gap-3'>
+							<img src="/assets/images/icons/done.svg" alt="">
+							<p class='flex gap-x-2 text-xl'><span>5</span>/<span>5</span></p>
+						</div>
+					</div>
+					<div class='flex items-center gap-3'>
+						<button class='bg-mainColorRed text-white py-3 px-5 rounded-md'>Ростов-на-Дону<span class='bg-[#C5000D] p-2 rounded-md ml-5'>3</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Новочеркасск<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>2</span></button>
+					</div>
+					<div class='grid gap-8 mt-10'>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>355</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Антон</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/check-circle.svg" alt="">
+										<span class='font-semibold text-[#8B0000]'>Подтвержден</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть заказ</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>255</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Дмитрий</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/done.svg" alt="">
+										<span class='text-[#70C05B]'>Собран</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть заказ</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>134</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Дмитрий</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/alert-triangle.svg" alt="">
+										<span class='text-[#8B0000]'>Возврат</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть заказ</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 2 -->
+					<div class='flex justify-between items-center text-lg mb-5 mt-12'>
+						<div class='flex items-center gap-2'>
+							<img src="/assets/images/icons/clock.svg" alt="">
+							<b>14:00</b>
+						</div>
+						<div class='flex items-center gap-3'>
+							<img src="/assets/images/icons/done.svg" alt="">
+							<p class='flex gap-x-2 text-xl'><span>8</span>/<span>8</span></p>
+						</div>
+					</div>
+					<div class='flex items-center gap-3'>
+						<button class='bg-mainColorRed text-white py-3 px-5 rounded-md'>Ростов-на-Дону<span class='bg-[#C5000D] p-2 rounded-md ml-5'>3</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Новочеркасск<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>2</span></button>
+					</div>
+					<div class='grid gap-8 mt-10'>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>855</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Антон</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/alert-circle.svg" alt="">
+										<span class='font-semibold text-[#8B0000]'>Не подтвердили</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>543</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Дмитрий</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/delivery.svg" alt="">
+										<span class='text-[#606060]'>Доставляется</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>756</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Дмитрий</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/home.svg" alt="">
+										<span class='text-[#8B0000]'>Вернули</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 3 -->
+					<div class='flex justify-between items-center text-lg mb-5 mt-12'>
+						<div class='flex items-center gap-2'>
+							<img src="/assets/images/icons/clock.svg" alt="">
+							<b>18:00</b>
+						</div>
+						<div class='flex items-center gap-3'>
+							<img src="/assets/images/icons/done.svg" alt="">
+							<p class='flex gap-x-2 text-xl'><span>1</span>/<span>2</span></p>
+						</div>
+					</div>
+					<div class='flex items-center gap-3'>
+						<button class='bg-mainColorRed text-white py-3 px-5 rounded-md'>Ростов-на-Дону<span class='bg-[#C5000D] p-2 rounded-md ml-5'>3</span></button>
+					</div>
+					<div class='grid gap-8 mt-10'>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>321</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Антон</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/alert-circle.svg" alt="">
+										<span class='font-semibold text-[#8B0000]'>Не подтвердили</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>421</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Дмитрий</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/bag.svg" alt="">
+										<span class='text-[#606060]'>Новый</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-mainColorRed text-white px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/icons/upload.svg" alt="">Выгрузить в 1с</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex items-center w-full gap-9'>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+						</div>
+						<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть заказ</button>
+					</div>
+					<!-- 4 -->
+					<div class='flex justify-between items-center text-lg mb-5 mt-12'>
+						<div class='flex items-center gap-2'>
+							<img src="/assets/images/icons/clock.svg" alt="">
+							<b>20:00</b>
+						</div>
+						<div class='flex items-center gap-3'>
+							<img src="/assets/images/icons/done.svg" alt="">
+							<p class='flex gap-x-2 text-xl'><span>1</span>/<span>2</span></p>
+						</div>
+					</div>
+					<div class='flex items-center gap-3 ьфч'>
+						<button class='bg-mainColorRed text-white py-3 px-5 rounded-md'>Усть-Ижма<span class='bg-[#C5000D] p-2 rounded-md ml-5'>3</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Галово<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>1</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Кельчиюр<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>1</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Галово<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>1</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Краснобор<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>1</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Диюр<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>1</span></button>
+						<button class='bg-[#F3F2F1] text-[#414141] py-3 px-5 rounded-md'>Ыргеншар<span class='bg-[#C5000D] p-2 rounded-md ml-5 text-white'>1</span></button>
+					</div>
+					<div class='grid gap-8 mt-10'>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>661</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Дмитрий</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/bag.svg" alt="">
+										<span class='text-[#606060]'>Новый</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-mainColorRed text-white px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/icons/upload.svg" alt="">Выгрузить в 1с</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex items-center w-full gap-9'>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+						</div>
+						<div class='grid gap-8 mt-10'>
+							<div class='flex justify-between items-center'>
+								<div class='flex items-center gap-5'>
+									<b>232</b>
+									<div class='flex items-center gap-2'>
+										<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+										<p>Дмитрий</p>
+									</div>
+								</div>
+								<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+									<div class='flex items-center gap-5'>
+										<div class='flex items-center gap-3'>
+											<img src="/assets/images/icons/phone.svg" alt="">
+											<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+										</div>
+										<div class='flex items-center gap-3'>
+											<img src="/assets/images/icons/bag.svg" alt="">
+											<span class='text-[#606060]'>Новый</span>
+										</div>
+									</div>
+									<div class='flex items-center gap-2 ml-12'>
+										<button class='flex bg-mainColorRed text-white px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/icons/upload.svg" alt="">Выгрузить в 1с</button>
+										<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+									</div>
+								</div>
+							</div>
+							<div class='flex items-center w-full gap-9'>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+							</div>
+						<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть заказ</button>
+					</div>
+					<div class='grid gap-8 mt-10'>
+						<div class='flex justify-between items-center'>
+							<div class='flex items-center gap-5'>
+								<b>512</b>
+								<div class='flex items-center gap-2'>
+									<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+									<p>Дмитрий</p>
+								</div>
+							</div>
+							<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+								<div class='flex items-center gap-5'>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/phone.svg" alt="">
+										<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+									</div>
+									<div class='flex items-center gap-3'>
+										<img src="/assets/images/icons/bag.svg" alt="">
+										<span class='text-[#606060]'>Новый</span>
+									</div>
+								</div>
+								<div class='flex items-center gap-2 ml-12'>
+									<button class='flex bg-mainColorRed text-white px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/icons/upload.svg" alt="">Выгрузить в 1с</button>
+									<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+								</div>
+							</div>
+						</div>
+						<div class='flex items-center w-full gap-9'>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+							<!-- card -->
+							<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+								<div class='flex absolute z-10 items-center gap-48'>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+										<b class='text-xl'>4</b>
+									</div>
+									<div class='flex items-center gap-1'>
+										<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+										<p class='text-xl'>40</p>
+									</div>
+								</div>
+								<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+								<div class='mt-2'>
+									<p>Снеки</p>
+									<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								</div>
+							</div>
+						</div>
+						<div class='grid gap-8 mt-10'>
+							<div class='flex justify-between items-center'>
+								<div class='flex items-center gap-5'>
+									<b>232</b>
+									<div class='flex items-center gap-2'>
+										<img class='w-12 rounded-full' src="/assets/images/userPhoto.jpg" alt="">
+										<p>Дмитрий</p>
+									</div>
+								</div>
+								<div class='flex items-center gap-5 text-left w-[688px] justify-between'>
+									<div class='flex items-center gap-5'>
+										<div class='flex items-center gap-3'>
+											<img src="/assets/images/icons/phone.svg" alt="">
+											<a class='' href="tel:+7 912 888 77 55">+7 912 888 77 55</a>
+										</div>
+										<div class='flex items-center gap-3'>
+											<img src="/assets/images/icons/bag.svg" alt="">
+											<span class='text-[#606060]'>Новый</span>
+										</div>
+									</div>
+									<div class='flex items-center gap-2 ml-12'>
+										<button class='flex bg-mainColorRed text-white px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/icons/upload.svg" alt="">Выгрузить в 1с</button>
+										<button class='bg-[#F3F2F1] p-2 rounded-md'><img src="/assets/images/icons/message-square-1.svg" alt=""></button>
+									</div>
+								</div>
+							</div>
+							<div class='flex items-center w-full gap-9'>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+								<!-- card -->
+								<div class='bg-white w-1/4 rounded-md shadow-md p-3'>
+									<div class='flex absolute z-10 items-center gap-48'>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/products_cards/shopping-cart.svg" alt="">
+											<b class='text-xl'>4</b>
+										</div>
+										<div class='flex items-center gap-1'>
+											<img class='w-8' src="/assets/images/icons/box.svg" alt="">
+											<p class='text-xl'>40</p>
+										</div>
+									</div>
+									<img class='relative m-auto' src="/assets/images/orders/img5.jpg" alt="">
+									<div class='mt-2'>
+										<p>Снеки</p>
+										<h2 class='text-lg max-w-[256px]'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+									</div>
+								</div>
+							</div>
+						<button class='flex bg-[#F3F2F1] text-[#515151] px-3 py-2 rounded-md gap-x-3 m-auto'><img src="/assets/images/products_cards/eye.svg" alt="">Посмотреть заказ</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

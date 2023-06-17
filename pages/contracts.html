@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/style.css">
+	<title>Флюгер | Договоры</title>
+</head>
+<body class='bg-[#FBF8EC]'>
+	<!-- Header -->
+	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
+		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex'>
+			<div>
+				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
+				<a href="index.html"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
+			</div>
+			<div class='flex items-center gap-4'>
+				<!--  --> 
+				<div class='relative inline-block sm:hidden'>
+					<button class='bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] focus:bg-[#1f7b71]' onclick='onClickButton()'>Каталог</button>
+					<!-- <div class='hidden absolute bg-black w-[350px] z-10 top-36' id='dropdown'>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+						<a class='text-fuchsia-100' href='#'>abc</a>
+					</div> -->
+				</div> 
+			<!--  -->
+			<form>
+				<div class='relative'>
+					<input class="pl-4 pr-[185px] py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-32 sm:w-80 md:pr-16 focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Найти товар' required>
+					<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+				</div>
+			</form>
+			</div>
+			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden'>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img class='w-6 h-w-6' src="/assets/images/menu/favorites.svg" alt="">Избранное</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/box.svg" alt="">Заказы</li>
+				</ul>
+				<ul>
+					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div class='flex items-center gap-3 sm:hidden'>
+				<img class='md:min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="Изображение пользователя">
+				<div class='flex items-center gap-5 text-white lg:hidden'>
+					<span>Александр</span>
+					<img src="/assets/images/menu/search-tool.svg" alt="">
+				</div>
+			</div>
+		</nav>
+		<nav class='hidden container items-center fixed bottom-0 bg-white gap-20 justify-center py-3 sm:gap-7'>
+			<div class='grid place-items-center gap-y-2'>
+				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
+				<a class='text-mainColorRed'>Каталог</a>
+			</div>
+			<div>
+				<ul class='flex items-center gap-24 sm:gap-8'>
+					<li class='grid place-items-center gap-y-2'><img class='w-7 h-w-7' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</li>
+					<li class='grid place-items-center gap-y-2'><img class='w-7 h-w-7' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</li>
+					<li class='grid place-items-center gap-y-2'><img class='w-7 h-w-7' src="/assets/images/menu/Blackshopping-cart.svg" alt="">Корзина</li>
+				</ul>
+			</div>
+			<div>
+				<img class='min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="">
+			</div>
+		</nav>
+	</header>
+	<!-- Main -->
+	<main>
+		<section class='container'>
+			<div class='flex justify-between  mt-32'>
+				<div class='flex text-[#8F8F8F] mb-3 items-center gap-3'>
+					<a href='index.html'>Главная</a href='index.html'>
+					<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
+					<a href='directory.html'>Справочники</a>
+					<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
+					<a href='#'>Договоры</a>
+				</div>
+				<div>
+					<ul class='flex gap-6 text-[#606060]'>
+						<li><a href="">Пользователи</a></li>
+						<li class='font-semibold'><a href="">Справочники</a></li>
+						<li><a href="">Администрирование</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class='my-7'>
+				<h1 class='text-[#414141] text-5xl font-semibold'>Договоры</h1>
+			</div>
+			<div>
+				<form class='flex gap-5 items-center'>
+					<div class='relative'>
+						<input class="pl-4 pr-56 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-32 sm:w-80 md:pr-16 focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Поиск договора' required>
+						<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+					</div>
+					<div class='flex items-center gap-4'>
+						<button class='bg-white border p-2 w-12 h-12 shadow-md'><img src="/assets/images/sort.svg" alt=""></button>
+						<button class='bg-white border p-2 w-12 h-12 shadow-md'><img src="/assets/images/add.svg" alt=""></button>
+					</div>
+				</form>
+				<table class='mt-11 w-full'>
+					<tr>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold'>Контрагент</td>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold'>№ договора</td>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold w-5'>Дата окончания договора</td>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold'>Скидка, %</td>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold'>Вид оплаты</td>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold'>Отсрочка платежа, дн.</td>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold'>Комментарий</td>
+						<td class='bg-[#f0f0f0] border p-6 font-semibold'></td>
+					</tr>
+					<tr>
+						<td class='bg-white border p-5'>ГААРДИ ООО</td>
+						<td class='bg-white border p-5'>Д00122565</td>
+						<td class='bg-white border p-5'>22.02.2024</td>
+						<td class='bg-white border p-5'>2</td>
+						<td class='bg-white border p-5'>Наличными</td>
+						<td class='bg-white border p-5'>0</td>
+						<td class='bg-white border p-5'></td>
+						<td class='flex bg-white border p-5 gap-3'>
+							<button><img class='w-6' src="/assets/images/tableEdit.svg" alt=""></button>
+							<button><img class='w-6' src="/assets/images/tableDelete.svg" alt=""></button>
+						</td>
+					</tr>
+					<tr class=''>
+						<td class='bg-white border p-5'>ИП Бирёханова Дана Иссаевна</td>
+						<td class='bg-white border p-5'>Д00122568</td>
+						<td class='bg-white border p-5'>22.03.2024</td>
+						<td class='bg-white border p-5'>10</td>
+						<td class='bg-white border p-5'>Аванс</td>
+						<td class='bg-white border p-5'>0</td>
+						<td class='bg-white border p-5'></td>
+						<td class='flex bg-white border p-5 gap-3 h-full'>
+							<button><img class='w-6' src="/assets/images/tableEdit.svg" alt=""></button>
+							<button><img class='w-6' src="/assets/images/tableDelete.svg" alt=""></button>
+						</td>
+					</tr>
+					<tr>
+						<td class='bg-white border p-5'>ИП Вольский</td>
+						<td class='bg-white border p-5'>Д00122561</td>
+						<td class='bg-white border p-5'>22.10.2024</td>
+						<td class='bg-white border p-5'>5</td>
+						<td class='bg-white border p-5'>Кредит</td>
+						<td class='bg-white border p-5'>10</td>
+						<td class='bg-white border p-5'></td>
+						<td class='flex bg-white border p-5 gap-3'>
+							<button><img class='w-6' src="/assets/images/tableEdit.svg" alt=""></button>
+							<button><img class='w-6' src="/assets/images/tableDelete.svg" alt=""></button>
+						</td>
+					</tr>
+					<tr>
+						<td class='bg-white border p-5'>ИП Воробьева</td>
+						<td class='bg-white border p-5'>Д00122567</td>
+						<td class='bg-white border p-5'>22.02.2024</td>
+						<td class='bg-white border p-5'>10</td>
+						<td class='bg-white border p-5'>Аванс</td>
+						<td class='bg-white border p-5'>0</td>
+						<td class='bg-white border p-5'></td>
+						<td class='flex bg-white border p-5 gap-3'>
+							<button><img class='w-6' src="/assets/images/tableEdit.svg" alt=""></button>
+							<button><img class='w-6' src="/assets/images/tableDelete.svg" alt=""></button>
+						</td>
+					</tr>
+					<tr>
+						<td class='bg-white border p-5'>ООО Потёмкинский</td>
+						<td class='bg-white border p-5'>Д00122563</td>
+						<td class='bg-white border p-5'>22.02.2024</td>
+						<td class='bg-white border p-5'>15</td>
+						<td class='bg-white border p-5'>Аванс</td>
+						<td class='bg-white border p-5'>0</td>
+						<td class='bg-white border p-5'></td>
+						<td class='flex bg-white border p-5 gap-3'>
+							<button><img class='w-6' src="/assets/images/tableEdit.svg" alt=""></button>
+							<button><img class='w-6' src="/assets/images/tableDelete.svg" alt=""></button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+	</main>
+	<footer class='bg-[#E5C3C5] mt-40 sm:hidden'>
+		<div class='container flex items-center gap-32 py-6'>
+			<div>
+				<img class='md:hidden' src="/assets/images/footerLogo.svg" alt="">
+				<img class='hidden md:block' src="/assets/images/logo.svg" alt="">
+			</div>
+			<div class='flex gap-3'>
+				<img class='w-8 items-center' src="/assets/images/footer/phoneLogo.svg" alt="">
+				<ul class='font-[600]'>
+					<li>Новочеркасск (8635) 22-41-10</li>
+					<li>Ростов-на-Дону (863) 279-80-41</li>
+				</ul>
+			</div>
+			<div class=''>
+				<p class=''>support@ifluger.ru</p>
+				<div class='flex gap-4'>
+					<img src="/assets/images/footer/telegram.svg" alt="">
+					<img src="/assets/images/footer/whatsapp.svg" alt="">
+					<img src="/assets/images/footer/vk.svg" alt="">
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
