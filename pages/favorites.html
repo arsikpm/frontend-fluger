@@ -85,14 +85,14 @@
 			<!--  -->
 			<form>
 				<div class='relative'>
-					<input class="pl-4 pr-12 lg:pr-8 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 md:pr-16 focus:ring-blue-500 focus:border-blue-500 w-96 lg:w-80 md:w-96 sm:w-60" type="search" id='default-search' placeholder='Найти товар' required>
+					<input class="pl-4 pr-12 lg:pr-8 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 md:pr-16 focus:ring-blue-500 focus:border-blue-500 w-96 lg:w-64 md:w-96 sm:w-60" type="search" id='default-search' placeholder='Найти товар' required>
 					<button class="text-white absolute right-2.5 bottom-3 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
 				</div>
 			</form>
 			</div>
 			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden md:hidden'>
 				<ul>
-					<li><a class='grid place-items-center gap-y-2 text-sm' href='favourites.html'><img class='w-7' src="/assets/images/menu/favorites.svg" alt="">Избранное</a></li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='favorites.html'><img class='w-7' src="/assets/images/menu/favorites.svg" alt="">Избранное</a></li>
 				</ul>
 				<ul>
 					<li><a class='grid place-items-center gap-y-2 text-sm' href='orders.html'><img class='w-7' src="/assets/images/menu/box.svg" alt="">Заказы</a></li>
@@ -128,22 +128,87 @@
 				<a href='#'>Избранное</a>
 			</div>
 			<h1 class='text-[#414141] text-5xl font-semibold my-7'>Избранное</h1>
-			<div class='flex gap-5'>
+			<div class='flex gap-5 lg:flex-col'>
 				<aside>
-					<button class='bg-[#f3f2f1] py-3 px-5 w-full text-left rounded-md font-semibold'>Фильтр</button>
-					<div class='mt-8'>
+					<button class='bg-[#f3f2f1] py-3 px-5 w-full text-left rounded-md font-semibold lg:hidden md:hidden sm:hidden'>Фильтр</button>
+					<!--  -->
+					<button class='hidden lg:block md:block sm:block bg-mainColorRed w-max text-white py-3 px-16 rounded-md' type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">Фильтр</button>
+					<!-- drawer component -->
+					<div id="drawer-navigation"
+						class="fixed top-20 left-0 z-40 h-screen p-5 overflow-y-auto transition-transform -translate-x-full bg-white"
+						tabindex="-1" aria-labelledby="drawer-navigation-label">
+						<button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+							class="bg-[#F3F2F1] w-full sm:w-max text-xl rounded-md px-4 py-3 inline-flex items-center mt-6 font-semibold">Фильтр</button>
+						<div class="p-4 overflow-y-auto">
+							<div class='mt-8 sm:mt-4'>
+								<div class='flex items-center gap-5 bg-[#f3f2f1] w-max py-2 px-5 rounded-md mb-14 sm:mb-10'>
+									<p>Очистить фильтры</p>
+									<button><img class='w-8' src="/assets/images/icons/close.svg" alt=""></button>
+								</div>
+								<div class='flex items-center justify-between sm:justify-start sm:gap-4'>
+									<h2 class='text-xl'>Цена</h2>
+									<button class='bg-[#f3f2f1] p-3 rounded-md'>Очистить</button>
+								</div>
+								<div class='flex items-center justify-between gap-2 mt-2 sm:mt-6'>
+									<input class='p-3 w-max sm:w-20 border rounded-md' type="text" id="amount-1" readonly>
+									<input class='p-3 w-max sm:w-20 border rounded-md' type="text" id="amount-2" readonly>
+								</div>
+								<div class="wrapper mt-4 text-center">
+									<div class="container-price">
+										<div class="slider-wrapper">
+											<div id="slider_range"></div>
+										</div>
+									</div>
+								</div>
+								<div class='my-5'>
+									<ul class='grid gap-2 sm:flex sm:flex-wrap'>
+										<li>
+											<input id="filer_cat_@category.4" type="checkbox" value="@category.Id"
+												class="peer hidden filter-category" required="">
+											<label for="filer_cat_@category.4"
+												class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-mainColorRed w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Молоко</label>
+										</li>
+										<li>
+											<input id="filer_cat_@category.5" type="checkbox" value="@category.Id"
+												class="peer hidden filter-category" required="">
+											<label for="filer_cat_@category.5"
+												class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-mainColorRed w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Сливки</label>
+										</li>
+										<li>
+											<input id="filer_cat_@category.6" type="checkbox" value="@category.Id"
+												class="peer hidden filter-category" required="">
+											<label for="filer_cat_@category.6"
+												class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-mainColorRed w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Яйцо</label>
+										</li>
+									</ul>
+								</div>
+								<div class='flex items-center gap-3'>
+									<label class="relative inline-flex items-center my-5 cursor-pointer">
+										<input type="checkbox" value="" class="sr-only peer">
+										<div
+											class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-500 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#009288]">
+										</div>
+									</label>
+									<span class="text-lg">В наличии</span>
+								</div>
+								<button
+									class='bg-[#B60220] text-white w-full py-3 px-2 rounded-md text-lg mt-4'>Применить</button>
+							</div>
+						</div>
+					</div>
+					<div class='mt-8 lg:hidden'>
 						<div class='flex items-center justify-between'>
 							<h2>Цена</h2>
 							<button class='bg-[#f3f2f1] p-2 rounded-md'>Очистить</button>
 						</div>
 						<div class='flex items-center justify-between gap-3 mt-2'>
-							<input class='p-3 w-max border rounded-md' type="text" id="amount-1" readonly>
-							<input class='p-3 w-max border rounded-md' type="text" id="amount-2" readonly>
+							<input class='p-3 w-max border rounded-md' type="text" id="amount-3" readonly>
+							<input class='p-3 w-max border rounded-md' type="text" id="amount-4" readonly>
 						</div>
 						<div class="wrapper mt-4 text-center">
 							<div class="container-price">
 							  <div class="slider-wrapper">
-								<div id="slider_range"></div>
+								<div id="slider_range_2"></div>
 							  </div>
 							</div>
 						</div>
@@ -174,24 +239,24 @@
 					</div>
 				</aside>
 				<div>
-					<div class='flex items-center gap-6'>
+					<div class='flex flex-wrap items-center gap-6 sm:hidden md:hidden lg:hidden'>
 						<div class='flex items-center gap-5 bg-[#B60220] w-max py-2 px-5 rounded-md text-white'>
 							<p>Цена от 99 до 2599</p>
-							<img class='w-8' src="/assets/images/icons/close.svg" alt="">
-						</div>
+							<button><img class='w-8' src="/assets/images/icons/close.svg" alt=""></button>
+						</div>					
 						<div class='flex items-center gap-5 bg-[#f3f2f1] w-max py-2 px-5 rounded-md'>
 							<p>Очистить</p>
-							<img class='w-8' src="/assets/images/icons/close.svg" alt="">
+							<button><img class='w-8' src="/assets/images/icons/close.svg" alt=""></button>
 						</div>
 					</div>
 					<div>
-						<div class='grid grid-cols-3 gap-8 mt-6'>
+						<div class='grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-8 mt-6'>
 							<!-- card -->
-							<div class='bg-white py-5 px-4 rounded-md border'>
+							<div class='flex flex-col bg-white py-5 px-4 rounded-md border'>
 								<img class='bg-[#F3F2F1] p-2 rounded-md absolute z-10 ' src="/assets/images/products_cards/like_icon.svg" alt="">
 								<img class='relative m-auto' src="/assets/images/products_cards/image1.jpg" alt="">
-								<h3 class='text-xl font-bold mt-2 mb-11'>139,99 <span>&#8381;</span></h3>
-								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+								<h3 class='text-xl font-bold mt-2 mb-11'>139,99<span class='ml-1'>&#8381;</span></h3>
+								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСsadasdasdasd asdasdНА-ПОЛЕСЬЕ GS12»</p>
 								<div class='flex my-4 gap-2'>
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
@@ -199,14 +264,21 @@
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 								</div>
-								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md'>В корзину</button>
+								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md mt-auto'>В корзину</button>
 							</div>
 							<!-- card -->
-							<div class='bg-white py-5 px-4 rounded-md border'>
+							<div class='flex flex-col bg-white py-5 px-4 rounded-md border'>
 								<img class='bg-[#F3F2F1] p-2 rounded-md absolute z-10 ' src="/assets/images/products_cards/like_icon.svg" alt="">
 								<img class='relative m-auto' src="/assets/images/products_cards/image1.jpg" alt="">
-								<h3 class='text-xl font-bold mt-2 mb-11'>139,99 <span>&#8381;</span></h3>
-								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+								<div class='flex items-center justify-between'>
+									<h3 class='text-xl font-bold'>139,99<span class='ml-1'>&#8381;</span></h3>
+									<p class='text-xl'>140,50<span class='ml-1'>&#8381;</span></p>
+								</div>
+								<div class='flex items-center justify-between mb-5'>
+									<span class='text-[#BFBFBF]'>Со скидкой</span>
+									<span class='text-[#BFBFBF]'>Обычная</span>
+								</div>
+								<p class='text-lg'>КомбайНА-ПОЛЕСЬЕ GS12»</p>
 								<div class='flex my-4 gap-2'>
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
@@ -214,14 +286,21 @@
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 								</div>
-								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md'>В корзину</button>
+								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md mt-auto'>В корзину</button>
 							</div>
 							<!-- card -->
-							<div class='bg-white py-5 px-4 rounded-md border'>
+							<div class='flex flex-col bg-white py-5 px-4 rounded-md border'>
 								<img class='bg-[#F3F2F1] p-2 rounded-md absolute z-10 ' src="/assets/images/products_cards/like_icon.svg" alt="">
 								<img class='relative m-auto' src="/assets/images/products_cards/image1.jpg" alt="">
-								<h3 class='text-xl font-bold mt-2 mb-11'>139,99 <span>&#8381;</span></h3>
-								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+								<div class='flex items-center justify-between'>
+									<h3 class='text-xl font-bold'>139,99<span class='ml-1'>&#8381;</span></h3>
+									<p class='text-xl'>140,50<span class='ml-1'>&#8381;</span></p>
+								</div>
+								<div class='flex items-center justify-between mb-5'>
+									<span class='text-[#BFBFBF]'>Со скидкой</span>
+									<span class='text-[#BFBFBF]'>Обычная</span>
+								</div>
+								<p class='text-lg'>КомбайНА-ПОЛЕСЬЕ GS12»</p>
 								<div class='flex my-4 gap-2'>
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
@@ -229,14 +308,14 @@
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 								</div>
-								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md'>В корзину</button>
+								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md mt-auto'>В корзину</button>
 							</div>
 							<!-- card -->
-							<div class='bg-white py-5 px-4 rounded-md border'>
+							<div class='flex flex-col bg-white py-5 px-4 rounded-md border'>
 								<img class='bg-[#F3F2F1] p-2 rounded-md absolute z-10 ' src="/assets/images/products_cards/like_icon.svg" alt="">
 								<img class='relative m-auto' src="/assets/images/products_cards/image1.jpg" alt="">
-								<h3 class='text-xl font-bold mt-2 mb-11'>139,99 <span>&#8381;</span></h3>
-								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+								<h3 class='text-xl font-bold mt-2 mb-11'>139,99<span class='ml-1'>&#8381;</span></h3>
+								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСsadasdasdasd asdasdНА-ПОЛЕСЬЕ GS12»</p>
 								<div class='flex my-4 gap-2'>
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
@@ -244,14 +323,14 @@
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 								</div>
-								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md'>В корзину</button>
+								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md mt-auto'>В корзину</button>
 							</div>
 							<!-- card -->
-							<div class='bg-white py-5 px-4 rounded-md border'>
+							<div class='flex flex-col bg-white py-5 px-4 rounded-md border'>
 								<img class='bg-[#F3F2F1] p-2 rounded-md absolute z-10 ' src="/assets/images/products_cards/like_icon.svg" alt="">
 								<img class='relative m-auto' src="/assets/images/products_cards/image1.jpg" alt="">
-								<h3 class='text-xl font-bold mt-2 mb-11'>139,99 <span>&#8381;</span></h3>
-								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+								<h3 class='text-xl font-bold mt-2 mb-11'>139,99<span class='ml-1'>&#8381;</span></h3>
+								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСsadasdasdasd asdasdНА-ПОЛЕСЬЕ GS12»</p>
 								<div class='flex my-4 gap-2'>
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
@@ -259,14 +338,14 @@
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 								</div>
-								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md'>В корзину</button>
+								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md mt-auto'>В корзину</button>
 							</div>
 							<!-- card -->
-							<div class='bg-white py-5 px-4 rounded-md border'>
+							<div class='flex flex-col bg-white py-5 px-4 rounded-md border'>
 								<img class='bg-[#F3F2F1] p-2 rounded-md absolute z-10 ' src="/assets/images/products_cards/like_icon.svg" alt="">
 								<img class='relative m-auto' src="/assets/images/products_cards/image1.jpg" alt="">
-								<h3 class='text-xl font-bold mt-2 mb-11'>139,99 <span>&#8381;</span></h3>
-								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</p>
+								<h3 class='text-xl font-bold mt-2 mb-11'>139,99<span class='ml-1'>&#8381;</span></h3>
+								<p class='text-lg'>Комбайн КЗС-1218 «ДЕСsadasdasdasd asdasdНА-ПОЛЕСЬЕ GS12»</p>
 								<div class='flex my-4 gap-2'>
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_full.svg" alt="">
@@ -274,24 +353,24 @@
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 									<img class='w-6' src="/assets/images/products_cards/star_none.svg" alt="">
 								</div>
-								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md'>В корзину</button>
+								<button class='bg-[#B60220] w-full text-lg text-white py-3 rounded-md mt-auto'>В корзину</button>
 							</div>
 						</div>
 					</div>
 					<div class='text-center'>
 						<button class='bg-[#f0f0f0] text-[#606060] px-10 py-3 rounded-md my-10 text-lg'>Показать еще</button>
 					</div>
-					<div class='flex items-center gap-11 w-max mb-5 m-auto'>
+					<div class='flex items-center gap-11 w-max sm:mb-36 md:mb-32 m-auto'>
 						<button><img src="/assets/images/menu/double_arrow.svg" alt=""></button>
 						<button><img src="/assets/images/menu/arrow_mn.svg" alt=""></button>
 						<button class='text-[#B60220] font-semibold'>1</button>
 						<button class='text-[#606060]'>2</button>
 						<button class='text-[#606060]'>3</button>
-						<button class='text-[#606060]'>4</button>
-						<button class='text-[#606060]'>5</button>
-						<button class='text-[#606060]'>6</button>
-						<button class='text-[#606060]'>7</button>
-						<button class='text-[#606060]'>8</button>
+						<button class='text-[#606060] sm:hidden'>4</button>
+						<button class='text-[#606060] sm:hidden'>5</button>
+						<button class='text-[#606060] sm:hidden'>6</button>
+						<button class='text-[#606060] lg:hidden'>7</button>
+						<button class='text-[#606060] lg:hidden'>8</button>
 						<button class='rotate-180'><img src="/assets/images/menu/arrow_mn.svg" alt=""></button>
 						<button class='rotate-180'><img src="/assets/images/menu/double_arrow.svg" alt=""></button>
 					</div>

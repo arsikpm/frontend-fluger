@@ -103,7 +103,7 @@
 				<form>
 					<div class='relative'>
 						<input
-							class="pl-4 pr-12 lg:pr-8 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 md:pr-16 focus:ring-blue-500 focus:border-blue-500 w-96 lg:w-80 md:w-96 sm:w-60"
+							class="pl-4 pr-12 lg:pr-8 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 md:pr-16 focus:ring-blue-500 focus:border-blue-500 w-96 lg:w-64 md:w-96 sm:w-60"
 							type="search" id='default-search' placeholder='Найти товар' required>
 						<button
 							class="text-white absolute right-2.5 bottom-3 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium"
@@ -113,7 +113,7 @@
 			</div>
 			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden md:hidden'>
 				<ul>
-					<li><a class='grid place-items-center gap-y-2 text-sm' href='favourites.html'><img class='w-7'
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='favorites.html'><img class='w-7'
 								src="/assets/images/menu/favorites.svg" alt="">Избранное</a></li>
 				</ul>
 				<ul>
@@ -154,7 +154,7 @@
 	<!-- Main section -->
 	<main>
 		<section class='container'>
-			<div class='flex text-[#8F8F8F] mt-32 mb-3 items-center gap-3'>
+			<div class='flex text-[#8F8F8F] mt-36 mb-3 items-center gap-3'>
 				<a href='index.html'>Каталог</a>
 				<img class='w-[7px]' src="/assets/images/menu/arrow.svg" alt="">
 				<a href='#'>Молоко, сыр, яйцо</a>
@@ -207,9 +207,12 @@
 				<div class='max-w-6xl'>
 					<div class='flex items-center gap-10'>
 						<!--  -->
-						<button class='bg-transparent border border-mainColorRed py-1 rounded-md px-3'><img class='w-10' src="/assets/images/menu/redBars.svg" alt=""></button>
+						<button class='bg-transparent border border-mainColorRed py-1 rounded-md px-3'><img class='w-10'
+								src="/assets/images/menu/redBars.svg" alt=""></button>
 						<!-- button -->
-						<button class='bg-mainColorRed w-max text-white py-3 px-16 rounded-md' type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">Фильтр</button>
+						<button class='bg-mainColorRed w-max text-white py-3 px-16 rounded-md' type="button"
+							data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+							aria-controls="drawer-navigation">Фильтр</button>
 					</div>
 					<!-- drawer component -->
 					<div id="drawer-navigation"
@@ -275,7 +278,7 @@
 						</div>
 					</div>
 					<!-- cards -->
-					<div class='grid grid-cols-3 gap-5 mt-10 sm:grid-cols-2 md:grid-cols-2'>
+					<div class='grid grid-cols-3 gap-5 mt-10 sm:grid-cols-1 md:grid-cols-2'>
 						<!-- card -->
 						<div class='flex flex-col bg-white py-5 px-4 rounded-md border'>
 							<img class='bg-[#F3F2F1] p-2 rounded-md absolute z-10 '
@@ -394,17 +397,17 @@
 						<button class='bg-[#f0f0f0] text-[#606060] px-10 py-3 rounded-md my-10 text-lg'>Показать
 							еще</button>
 					</div>
-					<div class='flex items-center gap-11 w-max mb-5 md:mb-28 m-auto'>
+					<div class='flex items-center gap-11 w-max mb-5 md:mb-28 mx-auto'>
 						<button><img src="/assets/images/menu/double_arrow.svg" alt=""></button>
 						<button><img src="/assets/images/menu/arrow_mn.svg" alt=""></button>
 						<button class='text-[#B60220] font-semibold'>1</button>
 						<button class='text-[#606060]'>2</button>
 						<button class='text-[#606060]'>3</button>
-						<button class='text-[#606060]'>4</button>
-						<button class='text-[#606060]'>5</button>
-						<button class='text-[#606060]'>6</button>
-						<button class='text-[#606060]'>7</button>
-						<button class='text-[#606060]'>8</button>
+						<button class='text-[#606060] sm:hidden'>4</button>
+						<button class='text-[#606060] sm:hidden'>5</button>
+						<button class='text-[#606060] md:hidden'>6</button>
+						<button class='text-[#606060] md:hidden'>7</button>
+						<button class='text-[#606060] md:hidden'>8</button>
 						<button class='rotate-180'><img src="/assets/images/menu/arrow_mn.svg" alt=""></button>
 						<button class='rotate-180'><img src="/assets/images/menu/double_arrow.svg" alt=""></button>
 					</div>
