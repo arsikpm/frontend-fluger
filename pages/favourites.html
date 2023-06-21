@@ -5,87 +5,117 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Флюгер | Избранное</title>
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/css/price_slider.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-	<script>
-		$( function() {
-		  $( "#slider_range" ).slider({
-			range: true,
-			min: 0,
-			max: 500,
-			values: [ 75, 300 ],
-			slide: function( event, ui ) {
-			  $( "#amount-1" ).val( "$" + ui.values[ 0 ]);
-			}
-		  });
-		  $( "#amount-2" ).val( "$" + $( "#slider_range" ).slider( "values", 1 ) +
-			" - $" + $( "#slider_range" ).slider( "values", 1 ) );
-		} );
-	</script>
+	<script src='/libs/jquery-3.6.0.js'></script>
+	<script src='/libs/jquery-ui.js'></script>
+	<script src="/libs/flowbite.min.js"></script>
+	<script src='/js/common.js'></script>
 </head>
-<body class='bg-[#FBF8EC]'>
+<body class='bg-[#FBF8EC] flex flex-col justify-between'>
 	<!-- Header -->
-	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
-		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex'>
+	<header class='bg-mainColorRed fixed top-0 z-[100] w-full'>
+		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex md:justify-between'>
 			<div>
-				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
-				<a href="index.html"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
+				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt=""></a>
+				<a href="index.html"><img class='hidden lg:block md:block' src="/assets/images/logo.svg" alt=""></a>
 			</div>
 			<div class='flex items-center gap-4'>
-				<!--  --> 
-				<div class='relative inline-block sm:hidden'>
-					<button class='bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] focus:bg-[#1f7b71]' onclick='onClickButton()'>Каталог</button>
-					<!-- <div class='hidden absolute bg-black w-[350px] z-10 top-36' id='dropdown'>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-					</div> -->
-				</div> 
+			<!--  --> 
+			<button class='flex items-center gap-4 bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] md:hidden' id="dropdownDefaultButton" data-dropdown-toggle="dropdown"><img class='min-w-[28px]' src="/assets/images/menu/bars.svg" alt=""><span class='lg:hidden'>Каталог</span></button>
+			<!-- Dropdown menu -->
+			<div id="dropdown" class="z-10 hidden py-5 bg-white rounded-b-md text-xl shadow-md transition-transform w-full">
+				<div class='grid container grid-cols-4 lg:grid-cols-2 items-center justify-between'>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Молоко, сыр, яйцо</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Хлеб</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Фрукты и овощи</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Замороженные продукты</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Напитки</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Кондитерские изделия</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Чай, кофе</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Бакалея</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Здоровое питание</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Зоотовары</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500 break-words">Непродовольственные товары</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Детское питание</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Мясо, птица, колбаса</a>
+							</li>
+						  </ul>
+					</div>
+				</div>
+			</div>
 			<!--  -->
 			<form>
 				<div class='relative'>
-					<input class="pl-4 pr-[185px] py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-32 sm:w-80 md:pr-16 focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Найти товар' required>
-					<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+					<input class="pl-4 pr-12 lg:pr-8 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 md:pr-16 focus:ring-blue-500 focus:border-blue-500 w-96 lg:w-80 md:w-96 sm:w-60" type="search" id='default-search' placeholder='Найти товар' required>
+					<button class="text-white absolute right-2.5 bottom-3 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
 				</div>
 			</form>
 			</div>
-			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden'>
+			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden md:hidden'>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img class='w-6 h-w-6' src="/assets/images/menu/favorites.svg" alt="">Избранное</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='favourites.html'><img class='w-7' src="/assets/images/menu/favorites.svg" alt="">Избранное</a></li>
 				</ul>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/box.svg" alt="">Заказы</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='orders.html'><img class='w-7' src="/assets/images/menu/box.svg" alt="">Заказы</a></li>
 				</ul>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='cart.html'><span class='absolute py-[2px] px-[6px] bottom-12 ml-10 text-xs rounded-full bg-red-600'>1</span><img class='w-7' src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</a></li>
 				</ul>
 			</div>
-			<div class='flex items-center gap-3 sm:hidden'>
-				<img class='md:min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="Изображение пользователя">
+			<div class='flex items-center gap-3 sm:hidden md:hidden'>
+				<img class='w-12 md:min-w-[58px] rounded-full' src="/assets/images/userPhoto.jpg" alt="Изображение пользователя">
 				<div class='flex items-center gap-5 text-white lg:hidden'>
 					<span>Александр</span>
 					<img src="/assets/images/menu/search-tool.svg" alt="">
 				</div>
 			</div>
 		</nav>
-		<nav class='hidden container items-center fixed bottom-0 bg-white gap-20 justify-center py-3 sm:gap-7'>
-			<div class='grid place-items-center gap-y-2'>
-				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
-				<a class='text-mainColorRed'>Каталог</a>
-			</div>
+		<nav class='hidden container items-center fixed bottom-0 bg-white justify-between py-3 md:flex sm:text-xs'>
+			<button class='grid place-items-center gap-y-2' id="dropdownDefaultButton" data-dropdown-toggle="dropdown"><img class='w-7 h-7' src="/assets/images/menu/redBars.svg" alt=""><span>Каталог</span></button>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</a>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</a>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/Blackshopping-cart.svg" alt=""><span class='absolute py-[2px] px-[6px] bottom-12 ml-10 text-xs rounded-full bg-red-600 text-white'>1</span>Корзина</a>
 			<div>
-				<ul class='flex items-center gap-24 sm:gap-8'>
-					<li class='grid place-items-center gap-y-2'><img class='w-7 h-w-7' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</li>
-					<li class='grid place-items-center gap-y-2'><img class='w-7 h-w-7' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</li>
-					<li class='grid place-items-center gap-y-2'><img class='w-7 h-w-7' src="/assets/images/menu/Blackshopping-cart.svg" alt="">Корзина</li>
-				</ul>
-			</div>
-			<div>
-				<img class='min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="">
+				<img class='w-14 min-w-[56px] rounded-full' src="/assets/images/userPhoto.jpg" alt="">
 			</div>
 		</nav>
 	</header>
@@ -121,15 +151,15 @@
 							<ul class='grid gap-2'>
 								<li>
 									<input id="filer_cat_@category.1" type="checkbox" value="@category.Id" class="peer hidden filter-category" required="">
-									<label for="filer_cat_@category.1" class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-blue-600 w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Молоко</label>
+									<label for="filer_cat_@category.1" class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-mainColorRed w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Молоко</label>
 								</li>
 								<li>
 									<input id="filer_cat_@category.2" type="checkbox" value="@category.Id" class="peer hidden filter-category" required="">
-									<label for="filer_cat_@category.2" class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-blue-600 w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Сливки</label>
+									<label for="filer_cat_@category.2" class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-mainColorRed w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Сливки</label>
 								</li>
 								<li>
 									<input id="filer_cat_@category.3" type="checkbox" value="@category.Id" class="peer hidden filter-category" required="">
-									<label for="filer_cat_@category.3" class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-blue-600 w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Яйцо</label>
+									<label for="filer_cat_@category.3" class="inline-flex items-center transition justify-between py-2 px-5 bg-transparent  border-2 border-transparent rounded-lg cursor-pointer peer-checked:border-mainColorRed w-36 hover:text-gray-600  peer-checked:text-gray-600 hover:bg-gray-50">Яйцо</label>
 								</li>
 							</ul>
 						</div>

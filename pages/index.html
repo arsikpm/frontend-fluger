@@ -5,69 +5,114 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/style.css">
-	<title>Флюгер</title>
+	<script src="/libs/flowbite.min.js"></script>
+	<title>Флюгер | Главная</title>
 </head>
-<body class='bg-[#FBF8EC]'>
+<body class='bg-[#FBF8EC] flex flex-col justify-between'>
 	<!-- Header -->
-	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
-		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex'>
+	<header class='bg-mainColorRed fixed top-0 z-[100] w-full'>
+		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex md:justify-between'>
 			<div>
-				<a href="#"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
-				<a href="#"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
+				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt=""></a>
+				<a href="index.html"><img class='hidden lg:block md:block' src="/assets/images/logo.svg" alt=""></a>
 			</div>
 			<div class='flex items-center gap-4'>
-				<!--  --> 
-				<div class='relative inline-block sm:hidden'>
-					<button class='bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] focus:bg-[#1f7b71]' onclick='onClickButton()'>Каталог</button>
-					<!-- <div class='hidden absolute bg-black w-[350px] z-10 top-36' id='dropdown'>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-					</div> -->
-				</div> 
+			<!--  --> 
+			<button class='flex items-center gap-4 bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] md:hidden' id="dropdownDefaultButton" data-dropdown-toggle="dropdown"><img class='min-w-[28px]' src="/assets/images/menu/bars.svg" alt=""><span class='lg:hidden'>Каталог</span></button>
+			<!-- Dropdown menu -->
+			<div id="dropdown" class="z-10 hidden py-5 bg-white rounded-b-md text-xl shadow-md transition-transform w-full">
+				<div class='grid container grid-cols-4 lg:grid-cols-2 items-center justify-between'>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Молоко, сыр, яйцо</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Хлеб</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Фрукты и овощи</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Замороженные продукты</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Напитки</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Кондитерские изделия</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Чай, кофе</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Бакалея</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Здоровое питание</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Зоотовары</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500 break-words">Непродовольственные товары</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Детское питание</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Мясо, птица, колбаса</a>
+							</li>
+						  </ul>
+					</div>
+				</div>
+			</div>
 			<!--  -->
 			<form>
 				<div class='relative'>
-					<input class="pl-4 pr-[185px] py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-32 sm:w-80 md:pr-16 focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Найти товар' required>
-					<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+					<input class="pl-4 pr-12 lg:pr-8 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 md:pr-16 focus:ring-blue-500 focus:border-blue-500 w-96 lg:w-64 md:w-96 sm:w-60" type="search" id='default-search' placeholder='Найти товар' required>
+					<button class="text-white absolute right-2.5 bottom-3 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
 				</div>
 			</form>
 			</div>
-			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden'>
+			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden md:hidden'>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img class='w-[24px] h-[24px]' src="/assets/images/menu/favorites.svg" alt="">Избранное</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='favourites.html'><img class='w-7' src="/assets/images/menu/favorites.svg" alt="">Избранное</a></li>
 				</ul>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/box.svg" alt="">Заказы</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='orders.html'><img class='w-7' src="/assets/images/menu/box.svg" alt="">Заказы</a></li>
 				</ul>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='cart.html'><span class='absolute py-[2px] px-[6px] bottom-12 ml-10 text-xs rounded-full bg-red-600'>1</span><img class='w-7' src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</a></li>
 				</ul>
 			</div>
-			<div class='flex items-center gap-3 sm:hidden'>
-				<img class='md:min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="Изображение пользователя">
+			<div class='flex items-center gap-3 sm:hidden md:hidden'>
+				<img class='w-12 md:min-w-[58px] rounded-full' src="/assets/images/userPhoto.jpg" alt="Изображение пользователя">
 				<div class='flex items-center gap-5 text-white lg:hidden'>
 					<span>Александр</span>
 					<img src="/assets/images/menu/search-tool.svg" alt="">
 				</div>
 			</div>
 		</nav>
-		<nav class='hidden container items-center fixed bottom-0 bg-white gap-20 justify-center py-3 sm:gap-7'>
-			<div class='grid place-items-center gap-y-2'>
-				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
-				<a class='text-mainColorRed'>Каталог</a>
-			</div>
+		<nav class='hidden container items-center fixed bottom-0 bg-white justify-between py-3 md:flex sm:text-xs'>
+			<button class='grid place-items-center gap-y-2' id="dropdownDefaultButton" data-dropdown-toggle="dropdown"><img class='w-7 h-7' src="/assets/images/menu/redBars.svg" alt=""><span>Каталог</span></button>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</a>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</a>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/Blackshopping-cart.svg" alt=""><span class='absolute py-[2px] px-[6px] bottom-12 ml-10 text-xs rounded-full bg-red-600 text-white'>1</span>Корзина</a>
 			<div>
-				<ul class='flex items-center gap-24 sm:gap-8'>
-					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</li>
-					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</li>
-					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/Blackshopping-cart.svg" alt="">Корзина</li>
-				</ul>
-			</div>
-			<div>
-				<img class='min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="">
+				<img class='w-14 min-w-[56px] rounded-full' src="/assets/images/userPhoto.jpg" alt="">
 			</div>
 		</nav>
 	</header>
@@ -75,98 +120,98 @@
 	<main>
 		<section id='main' class='sm:mb-36'>
 			<div class='container'>
-				<h1 class='font-semibold text-[#414141] text-[38px] mt-[120px] mb-[35px] sm:mt-15'>Каталог</h1>
-				<div class='grid grid-cols-4 grid-flow-row gap-8 sm:grid-cols-2 md:grid-cols-3 md:mb-32'>
-					<div class='col-span-2 relative sm:c'>
+				<h1 class='font-semibold text-[#414141] text-5xl mt-[120px] mb-[35px] sm:mt-15'>Каталог</h1>
+				<div class='grid grid-cols-4 grid-flow-row gap-8 sm:grid-cols-2 md:grid-cols-3 md:mb-32 lg:grid-cols-3'>
+					<div class='col-span-2 relative '>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/milk.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/milk.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="products.html">Молоко, сыр, яйцо</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="products.html">Молоко, сыр, яйцо</a>
 					</div>
 					<div class='col-span-1 relative'>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/bread.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/bread.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Хлеб</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Хлеб</a>
 					</div>
 					<div class='col-span-1 relative'>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/greens.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/greens.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Фрукты и овощи</a>
-					</div>
-					<!--  -->
-					<div class='col-span-1 relative'>
-						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/freezedProducts.jpg" alt="">
-						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Замороженные продукты</a>
-					</div>
-					<div class='col-span-1 relative'>
-						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/dinks.jpg" alt="">
-						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Напитки</a>
-					</div>
-					<div class='col-span-1 relative'>
-						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/candys.jpg" alt="">
-						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Кондитерские изделия</a>
-					</div>
-					<div class='col-span-1 relative'>
-						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/hotDrinks.jpg" alt="">
-						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Чай, кофе</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Фрукты и овощи</a>
 					</div>
 					<!--  -->
 					<div class='col-span-1 relative'>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/grocery.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/freezedProducts.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Бакалея</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-all' href="#">Замороженные продукты</a>
 					</div>
 					<div class='col-span-1 relative'>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/healthyFood.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/dinks.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Здоровое питание</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Напитки</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/candys.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words sm:break-all' href="#">Кондитерские изделия</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/hotDrinks.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Чай, кофе</a>
+					</div>
+					<!--  -->
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/grocery.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Бакалея</a>
+					</div>
+					<div class='col-span-1 relative'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/healthyFood.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Здоровое питание</a>
 					</div>
 					<div class='col-span-2 relative'>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/petSupp.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/petSupp.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Зоотовары</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Зоотовары</a>
 					</div>
 					<!--  -->
 					<div class='col-span-1 relative'>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/default.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/default.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Детское питание</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Детское питание</a>
+					</div>
+					<div class='col-span-1 sm:col-span-2 relative sm:order-last'>
+						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/meat.jpg" alt="">
+						</div>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 break-words' href="#">Мясо, птица, колбаса</a>
 					</div>
 					<div class='col-span-1 relative'>
 						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/meat.jpg" alt="">
+							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply lg:h-48' src="/assets/images/cards/default.jpg" alt="">
 						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3' href="#">Мясо, птица, колбаса</a>
-					</div>
-					<div class='col-span-1 relative'>
-						<div class='bg-gradient-to-t from-mainColorRed rounded-md'>
-							<img class='w-[100%] h-[240px] md:h-40 rounded-md mix-blend-multiply sm:h-[170px]' src="/assets/images/cards/default.jpg" alt="">
-						</div>
-						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 ' href="#">Непродоволь<br class='hidden md:block sm:block'>ственные продукты</a>
+						<a class='text-white text-2xl font-bold absolute bottom-3 left-3 md:break-all lg:break-all sm:break-all' href="#">Непродовольственные продукты</a>
 					</div>
 				</div>
 			</div>
 		</section>
 	</main>
-	<footer class='bg-[#E5C3C5] mt-40 sm:hidden'>
+	<footer class='bg-[#E5C3C5] mt-40 sm:hidden md:hidden'>
 		<div class='container flex items-center gap-32 py-6'>
 			<div>
-				<img class='md:hidden' src="/assets/images/footerLogo.svg" alt="">
-				<img class='hidden md:block' src="/assets/images/logo.svg" alt="">
+				<a href='index.html'><img class='md:hidden lg:hidden' src="/assets/images/footerLogo.svg" alt=""></a>
+				<a href='index.html'><img class='hidden md:block lg:block' src="/assets/images/logo.svg" alt=""></a>
 			</div>
 			<div class='flex gap-3'>
 				<img class='w-8 items-center' src="/assets/images/footer/phoneLogo.svg" alt="">
@@ -175,12 +220,12 @@
 					<li>Ростов-на-Дону (863) 279-80-41</li>
 				</ul>
 			</div>
-			<div class=''>
-				<p class=''>support@ifluger.ru</p>
+			<div class='grid gap-2'>
+				<a href='#' class='underline'>support@ifluger.ru</a>
 				<div class='flex gap-4'>
-					<img src="/assets/images/footer/telegram.svg" alt="">
-					<img src="/assets/images/footer/whatsapp.svg" alt="">
-					<img src="/assets/images/footer/vk.svg" alt="">
+					<a href='#'><img src="/assets/images/footer/telegram.svg" alt=""></a>
+					<a href='#'><img src="/assets/images/footer/whatsapp.svg" alt=""></a>
+					<a href='#'><img src="/assets/images/footer/vk.svg" alt=""></a>
 				</div>
 			</div>
 		</div>

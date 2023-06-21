@@ -5,69 +5,114 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/style.css">
+	<script src="/libs/flowbite.min.js"></script>
 	<title>Флюгер | Корзина</title>
 </head>
-<body class='bg-[#FBF8EC]'>
+<body class='bg-[#FBF8EC] flex flex-col justify-between'>
 	<!-- Header -->
-	<header class='bg-mainColorRed fixed top-0 z-[100] w-[100%]'>
-		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex'>
+	<header class='bg-mainColorRed fixed top-0 z-[100] w-full'>
+		<nav class='container flex justify-between items-center py-2 tracking-widest sm:flex md:justify-between'>
 			<div>
-				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt="logo"></a>
-				<a href="index.html"><img class='hidden lg:block md:block md:min-w-[58px]' src="/assets/images/logo.svg" alt=""></a>
+				<a href="index.html"><img class='lg:hidden sm:hidden' src="/assets/images/logo-main.svg" alt=""></a>
+				<a href="index.html"><img class='hidden lg:block md:block' src="/assets/images/logo.svg" alt=""></a>
 			</div>
 			<div class='flex items-center gap-4'>
-				<!--  --> 
-				<div class='relative inline-block sm:hidden'>
-					<button class='bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] focus:bg-[#1f7b71]' onclick='onClickButton()'>Каталог</button>
-					<!-- <div class='hidden absolute bg-black w-[350px] z-10 top-36' id='dropdown'>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-						<a class='text-fuchsia-100' href='#'>abc</a>
-					</div> -->
-				</div> 
+			<!--  --> 
+			<button class='flex items-center gap-4 bg-buttonColor text-white px-5 py-3 rounded-md hover:bg-[#1f7b71] md:hidden' id="dropdownDefaultButton" data-dropdown-toggle="dropdown"><img class='min-w-[28px]' src="/assets/images/menu/bars.svg" alt=""><span class='lg:hidden'>Каталог</span></button>
+			<!-- Dropdown menu -->
+			<div id="dropdown" class="z-10 hidden py-5 bg-white rounded-b-md text-xl shadow-md transition-transform w-full">
+				<div class='grid container grid-cols-4 lg:grid-cols-2 items-center justify-between'>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Молоко, сыр, яйцо</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Хлеб</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Фрукты и овощи</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Замороженные продукты</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Напитки</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Кондитерские изделия</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Чай, кофе</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Бакалея</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Здоровое питание</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Зоотовары</a>
+							</li>
+						  </ul>
+					</div>
+					<div>
+						<ul class="py-2 text-xl text-gray-700" aria-labelledby="dropdownDefaultButton">
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500 break-words">Непродовольственные товары</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Детское питание</a>
+							</li>
+							<li>
+							  <a href="#" class="block px-4 py-2 font-semibold hover:text-orange-500">Мясо, птица, колбаса</a>
+							</li>
+						  </ul>
+					</div>
+				</div>
+			</div>
 			<!--  -->
 			<form>
 				<div class='relative'>
-					<input class="pl-4 pr-[185px] py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 lg:pr-32 sm:w-80 md:pr-16 focus:ring-blue-500 focus:border-blue-500" type="search" id='default-search' placeholder='Найти товар' required>
-					<button class="text-white absolute right-2.5 bottom-[13px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
+					<input class="pl-4 pr-12 lg:pr-8 py-3 text-md text-gray-900 border border-gray-300 rounded-md bg-gray-50 md:pr-16 focus:ring-blue-500 focus:border-blue-500 w-96 lg:w-80 md:w-96 sm:w-60" type="search" id='default-search' placeholder='Найти товар' required>
+					<button class="text-white absolute right-2.5 bottom-3 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium" type='submit'><img src="/assets/images/menu/search.svg" alt=""></button>
 				</div>
 			</form>
 			</div>
-			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden'>
+			<div class='flex items-center gap-8 text-white lg:gap-4 sm:hidden md:hidden'>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img class='w-[24px] h-[24px]' src="/assets/images/menu/favorites.svg" alt="">Избранное</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='favourites.html'><img class='w-7' src="/assets/images/menu/favorites.svg" alt="">Избранное</a></li>
 				</ul>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/box.svg" alt="">Заказы</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='orders.html'><img class='w-7' src="/assets/images/menu/box.svg" alt="">Заказы</a></li>
 				</ul>
 				<ul>
-					<li class='grid place-items-center gap-y-2'><img src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</li>
+					<li><a class='grid place-items-center gap-y-2 text-sm' href='cart.html'><span class='absolute py-[2px] px-[6px] bottom-12 ml-10 text-xs rounded-full bg-red-600'>1</span><img class='w-7' src="/assets/images/menu/shopping-cart.svg" alt="">Корзина</a></li>
 				</ul>
 			</div>
-			<div class='flex items-center gap-3 sm:hidden'>
-				<img class='md:min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="Изображение пользователя">
+			<div class='flex items-center gap-3 sm:hidden md:hidden'>
+				<img class='w-12 md:min-w-[58px] rounded-full' src="/assets/images/userPhoto.jpg" alt="Изображение пользователя">
 				<div class='flex items-center gap-5 text-white lg:hidden'>
 					<span>Александр</span>
 					<img src="/assets/images/menu/search-tool.svg" alt="">
 				</div>
 			</div>
 		</nav>
-		<nav class='hidden container items-center fixed bottom-0 bg-white gap-20 justify-center py-3 sm:gap-7'>
-			<div class='grid place-items-center gap-y-2'>
-				<img class='w-[28px] h-[28px]' src="/assets/images/menu/redBars.svg" alt="">
-				<a class='text-mainColorRed'>Каталог</a>
-			</div>
+		<nav class='hidden container items-center fixed bottom-0 bg-white justify-between py-3 md:flex sm:text-xs'>
+			<button class='grid place-items-center gap-y-2' id="dropdownDefaultButton" data-dropdown-toggle="dropdown"><img class='w-7 h-7' src="/assets/images/menu/redBars.svg" alt=""><span>Каталог</span></button>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</a>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</a>
+			<a class='grid place-items-center gap-y-2' href='#'><img class='w-7 h-7' src="/assets/images/menu/Blackshopping-cart.svg" alt=""><span class='absolute py-[2px] px-[6px] bottom-12 ml-10 text-xs rounded-full bg-red-600 text-white'>1</span>Корзина</a>
 			<div>
-				<ul class='flex items-center gap-24 sm:gap-8'>
-					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackFavorites.svg" alt="">Избранное</li>
-					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/BlackBox.svg" alt="">Заказы</li>
-					<li class='grid place-items-center gap-y-2'><img class='w-[28px] h-[28px]' src="/assets/images/menu/Blackshopping-cart.svg" alt="">Корзина</li>
-				</ul>
-			</div>
-			<div>
-				<img class='min-w-[58px]' src="/assets/images/menu/avatar.svg" alt="">
+				<img class='w-14 min-w-[56px] rounded-full' src="/assets/images/userPhoto.jpg" alt="">
 			</div>
 		</nav>
 	</header>
@@ -83,7 +128,7 @@
 				<h1 class='text-[#414141] text-5xl my-7 font-semibold sm:max-w-xs'>Корзина</h1>
 				<div class='bg-mainColorRed w-max h-max text-white text-2xl py-1 px-3 rounded-md'>3</div>
 			</div>
-			<div class='flex items-center gap-3 mb-8'>
+			<div class='flex items-center gap-3 my-12'>
 				<button class='bg-mainColorRed p-4 rounded-md'>
 					<img src="/assets/images/cart/select.svg" alt="">
 				</button>
@@ -94,13 +139,13 @@
 				<!-- cards -->
 				<div class='grid gap-y-8'>
 				<!-- card -->
-				<div class='flex items-center bg-white p-3 rounded-md shadow-md'>
-					<div class='mr-24'>
-						<input class='w-8 h-8' type="checkbox">
+				<div class='relative flex items-center justify-between bg-white p-3 rounded-md shadow-md'>
+					<div class=''>
+						<input class='w-8 h-8 absolute top-[-8px]' type="checkbox">
 						<div class='flex'>
-						<img class='min-w-[82px] mr-2' src="/assets/images/cart/imgProduct.jpg" alt="">
-							<div class='grid gap-y-2'>
-								<h2 class='text-[#414141] text-2xl'>Горчица МАХЕЕВЪ Русская</h2>
+						<img class='mr-2 h-full w-24 shadow-md rounded-md' src="/assets/images/cart/imgProduct.jpg" alt="">
+							<div class='grid gap-y-2 max-w-lg'>
+								<h2 class='text-[#414141] text-2xl'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
 								<div class='flex gap-6'>
 									<b>44,50 <span>&#8381;</span></b>
 									<p class='text-[#606060]'>50,50 <span>&#8381;</span> за шт.</p>
@@ -112,52 +157,26 @@
 							<button class='border-2 border-transparent bg-mainColorRed rounded-md text-white px-7 py-2 hover:bg-white hover:border-mainColorRed hover:text-mainColorRed'>Добавить в избранное</button>
 						</div>
 					</div>
-					<div class='flex items-center gap-4 border-2 border-mainColorRed h-max py-1 px-4 rounded-md text-mainColorRed text-2xl mr-12' id='counter'>
-						<button id='buttonCountMinus'><img class='w-10' src="/assets/images/cart/minus.svg" alt=""></button>
-						<div class='text-2xl' id='buttonCountNumber'>2</div>
-						<button id='buttonCountPlus'><img class='w-10' src="/assets/images/cart/plus.svg" alt=""></button>
-					</div>
-					<div class='text-right'>
-						<p class='text-xl font-semibold'>80,10 <span>&#8381;</span></p>
-						<s class='text-[#8F8F8F]'>89,00 <span>&#8381;</span></s>
+					<div class='grid gap-3'>
+						<div class='flex items-center gap-4 border-2 border-mainColorRed h-max py-1 px-4 rounded-md text-mainColorRed text-2xl' id='counter'>
+							<button id='buttonCountMinus'><img class='w-10' src="/assets/images/cart/minus.svg" alt=""></button>
+							<input type="text" class="goods-number-input  text-mainColorRed text-2xl text-center w-14" />
+							<button id='buttonCountPlus'><img class='w-10' src="/assets/images/cart/plus.svg" alt=""></button>
+						</div>
+						<div class='text-right'>
+							<p class='text-2xl font-semibold'>80,10 <span>&#8381;</span></p>
+							<s class='text-[#8F8F8F]'>89,00 <span>&#8381;</span></s>
+						</div>
 					</div>
 				</div>
 				<!-- card -->
-				<div class='flex items-center bg-white p-3 rounded-md shadow-md'>
-					<div class='mr-24'>
-						<input class='w-8 h-8' type="checkbox">
+				<div class='relative flex items-center justify-between bg-white p-3 rounded-md shadow-md'>
+					<div class=''>
+						<input class='w-8 h-8 absolute top-[-8px]' type="checkbox">
 						<div class='flex'>
-						<img class='min-w-[82px] mr-2' src="/assets/images/cart/imgProduct.jpg" alt="">
-							<div class='grid gap-y-2'>
-								<h2 class='text-[#414141] text-2xl'>Горчица МАХЕЕВЪ Русская</h2>
-								<div class='flex gap-6'>
-									<b>44,50 <span>&#8381;</span></b>
-									<p class='text-[#606060]'>за шт.</p>
-								</div>
-							</div>
-						</div>
-						<div class='flex mt-4 items-center gap-8'>
-							<button class='border-2 border-mainColorRed rounded-md text-mainColorRed px-7 py-2'>Удалить</button>
-							<button class='border-2 border-transparent bg-mainColorRed rounded-md text-white px-7 py-2 hover:bg-white hover:border-mainColorRed hover:text-mainColorRed'>Добавить в избранное</button>
-						</div>
-					</div>
-					<div class='flex items-center gap-4 border-2 border-mainColorRed h-max py-1 px-4 rounded-md text-mainColorRed text-2xl mr-12' id='counter'>
-						<button id='buttonCountMinus'><img class='w-10' src="/assets/images/cart/minus.svg" alt=""></button>
-						<div class='text-2xl' id='buttonCountNumber'>2</div>
-						<button id='buttonCountPlus'><img class='w-10' src="/assets/images/cart/plus.svg" alt=""></button>
-					</div>
-					<div class='text-right'>
-						<p class='text-xl font-semibold'>89,00 <span>&#8381;</span></p>
-					</div>
-				</div>
-				<!-- card -->
-				<div class='flex items-center bg-white p-3 rounded-md'>
-					<div class='mr-44'>
-						<input class='w-8 h-8 opacity-25' type="checkbox">
-						<div class='flex opacity-25'>
-						<img class='min-w-[82px] mr-2' src="/assets/images/cart/imgProduct.jpg" alt="">
-							<div class='grid gap-y-2'>
-								<h2 class='text-[#414141] text-2xl'>Горчица МАХЕЕВЪ Русская</h2>
+						<img class='mr-2 h-full w-24 shadow-md rounded-md' src="/assets/images/cart/imgProduct.jpg" alt="">
+							<div class='grid gap-y-2 max-w-lg'>
+								<h2 class='text-[#414141] text-2xl'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
 								<div class='flex gap-6'>
 									<b>44,50 <span>&#8381;</span></b>
 									<p class='text-[#606060]'>50,50 <span>&#8381;</span> за шт.</p>
@@ -169,28 +188,58 @@
 							<button class='border-2 border-transparent bg-mainColorRed rounded-md text-white px-7 py-2 hover:bg-white hover:border-mainColorRed hover:text-mainColorRed'>Добавить в избранное</button>
 						</div>
 					</div>
-					<div>
-						<p class='text-xl text-[#414141]'>Нет в наличии</p>
+					<div class='grid gap-3'>
+						<div class='flex items-center gap-4 border-2 border-mainColorRed h-max py-1 px-4 rounded-md text-mainColorRed text-2xl' id='counter'>
+							<button id='buttonCountMinus'><img class='w-10' src="/assets/images/cart/minus.svg" alt=""></button>
+							<input type="text" class="goods-number-input  text-mainColorRed text-2xl text-center w-14" />
+							<button id='buttonCountPlus'><img class='w-10' src="/assets/images/cart/plus.svg" alt=""></button>
+						</div>
+						<div class='text-right'>
+							<p class='text-2xl font-semibold'>80,10 <span>&#8381;</span></p>
+							<s class='text-[#8F8F8F]'>89,00 <span>&#8381;</span></s>
+						</div>
 					</div>
 				</div>
-				</div>
-				<div class='w-72'>
-					<button class='bg-mainColorRed text-white py-3 px-8 rounded-md w-full text-xl'>Оформить заказ</button>
+				<!-- card -->
+				<div class='relative flex justify-between bg-white p-3 rounded-md shadow-md'>
 					<div>
-						<div class='border-y-2 my-3 py-4 text-[#8F8F8F] text-lg'>
-							<div class='flex items-center justify-between'>
-								<p>3 товара</p>
-								<span>1059,10 &#8381;</span>
-							</div>
-							<div class='flex items-center justify-between'>
-								<p>Скидка</p>
-								<b class='text-mainColorRed'>-8,01 &#8381;</b>
+						<input class='w-8 h-8 opacity-50 top-[-8px] absolute z-10' type="checkbox">
+						<div class='flex opacity-50'>
+							<img class='mr-2 h-full w-24 shadow-md rounded-md' src="/assets/images/cart/imgProduct.jpg" alt="">
+							<div class='grid gap-y-2 max-w-lg'>
+								<h2 class='text-[#414141] text-2xl'>Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»</h2>
+								<div class='flex gap-6'>
+									<b>44,50 <span>&#8381;</span></b>
+									<p class='text-[#606060]'>50,50 <span>&#8381;</span> за шт.</p>
+								</div>
 							</div>
 						</div>
-						<div class='flex justify-between text-lg'>
-							<p class='text-[#8F8F8F]'>Итог</p>
-							<b class='text-xl'>1051,09 &#8381;</b>
+						<div class='flex mt-4 items-center gap-8'>
+							<button class='border-2 border-mainColorRed rounded-md text-mainColorRed px-7 py-2'>Удалить</button>
+							<button class='border-2 border-transparent bg-mainColorRed rounded-md text-white px-7 py-2 hover:bg-white hover:border-mainColorRed hover:text-mainColorRed'>Добавить в избранное</button>
 						</div>
+					</div>
+					<div class='mt-3 opacity-50'>
+						<p class='text-2xl text-[#414141]'>Нет в наличии</p>
+					</div>
+				</div>
+			</div>
+			<div class='w-80'>
+				<button class='bg-mainColorRed text-white py-3 px-8 rounded-md w-full text-xl'>Оформить заказ</button>
+				<div>
+					<div class='border-y-2 my-3 py-4 text-[#8F8F8F] text-lg'>
+						<div class='flex items-center justify-between'>
+							<p>3 товара</p>
+							<span>1059,10 &#8381;</span>
+						</div>
+						<div class='flex items-center justify-between'>
+							<p>Скидка</p>
+							<b class='text-mainColorRed'>-8,01 &#8381;</b>
+						</div>
+					</div>
+					<div class='flex justify-between text-lg'>
+						<p class='text-[#8F8F8F]'>Итог</p>
+						<b class='text-xl'>1051,09 &#8381;</b>
 					</div>
 				</div>
 			</div>
